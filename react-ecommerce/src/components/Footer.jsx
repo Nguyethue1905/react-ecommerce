@@ -2,8 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "./LanguageSwitcher";
+
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-white">
       <div className="mx-auto px-4 container">
@@ -11,14 +15,14 @@ export const Footer = () => {
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-gray-800">Wolf Fix</h3>
             <p className="text-gray-600">
-              Wolf Music là hệ thống phân phối nhạc cụ, âm thanh, ánh sáng, phòng thu với hệ thống showroom và hơn 70 đại lý khắp các tỉnh thành.
+              {t("footer.describe")}
             </p>
             <ul className="space-y-2">
               <li className="text-gray-600"><FontAwesomeIcon icon={faEnvelope} size="lg" /> wolfmusic@gmail.com</li>
-              <li className="text-gray-600"><FontAwesomeIcon icon={faLocationDot} size="lg" /> 70 Lữ Gia, Phường 15, Quận 11, Thành phố Hồ Chí Minh</li>
+              <li className="text-gray-600"><FontAwesomeIcon icon={faLocationDot} size="lg" />{t("footer.address")}</li>
               <li className="text-gray-600"><FontAwesomeIcon icon={faPhone} size="lg" /> 1900 6750</li>
             </ul>
-            <h3 className="text-2xl">Kết nối với Wolf Fix</h3>
+            <h3 className="text-2xl">{t("footer.connectwith")}</h3>
             <ul className="flex space-x-4">
               <li className="text-gray-600"><FontAwesomeIcon icon={faFacebook} size="2xl" style={{ color: "#1055C9" }} /></li>
               <li className="text-gray-600"><FontAwesomeIcon icon={faTwitter} size="2xl" style={{ color: "#1055C9" }} /></li>
@@ -37,30 +41,29 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-gray-800">Chăm sóc khách hàng</h3>
+            <h3 className="text-xl font-bold text-gray-800">{t("footer.customer care")}</h3>
 
             <ul className="space-y-2">
-              <li className="text-gray-600"><a href="">Hệ thống cửa hàng</a></li>
-              <li className="text-gray-600"><a href="">Kiểm tra đơn hàng</a></li>
-              <li className="text-gray-600"><a href="">Hướng dẫn thanh toán</a></li>
-              <li className="text-gray-600"><a href="">Các hình thức mua hàng</a></li>
-              <li className="text-gray-600"><a href="">Hướng dẫn mua hàng</a></li>
-              <li className="text-gray-600"><a href="">Giới thiệu Wolf Fix</a></li>
-              <li className="text-gray-600"><a href="">Liên hệ với chúng tôi</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.store system")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.check your order")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Payment instructions")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Forms of purchase")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Buying guide")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Introducing Wolf Fix")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Contact us")}</a></li>
             </ul>
 
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-gray-800">Chính sách bán hàng</h3>
+            <h3 className="text-xl font-bold text-gray-800">{t("footer.Sales policy")}</h3>
 
             <ul className="space-y-2">
-              <li className="text-gray-600"><a href="">Chính sách và quy định chung</a></li>
-              <li className="text-gray-600"><a href="">Chính sách bảo hành sản phẩm</a></li>
-              <li className="text-gray-600"><a href="">Chính sách bảo mật thông tin</a></li>
-              <li className="text-gray-600"><a href="">Chính sách vận chuyển</a></li>
-              <li className="text-gray-600"><a href="">Quy trình giao hàng</a></li>
-              <li className="text-gray-600"><a href="">Chính sách đổi trả</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.General policies and regulations")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Product warranty policy")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Information security policy")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Delivery process")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Return policy")}</a></li>
             </ul>
             <a href="" className="flex items-center text-gray-600 hover:text-red-500">
               <div>
@@ -68,25 +71,25 @@ export const Footer = () => {
               </div>
               <div>
                 <p className="font-bold">Zalo Mini Apps</p>
-                <p>Quét mã QR để mua hàng nhanh chóng</p>
+                <p>{t("footer.QRcode")}</p>
               </div>
             </a>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-gray-800">Dịch vụ và thông tin khác</h3>
+            <h3 className="text-xl font-bold text-gray-800">{t("footer.services")}</h3>
 
             <ul className="space-y-2">
-              <li className="text-gray-600"><a href="">Ưu đãi thanh toán</a></li>
-              <li className="text-gray-600"><a href="">Khách hàng doanh nghiệp</a></li>
-              <li className="text-gray-600"><a href="">Thông tin tuyển dụng</a></li>
-              <li className="text-gray-600"><a href="">Chính sách Bảo hành</a></li>
-              <li className="text-gray-600"><a href="">Trả góp qua thẻ</a></li>
-              <li className="text-gray-600"><a href="">Trả góp qua công ty tài chính</a></li>
-              <li className="text-gray-600"><a href="">Hóa đơn GTGT điện tử</a></li>
-              <li className="text-gray-600"><a href="">Đăng ký làm đại lý</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Payment incentives")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Business customers")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Recruitment information")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Warranty Policy")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.pay")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.installment")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Electronic VAT invoice")}</a></li>
+              <li className="text-gray-600"><a href="">{t("footer.Register to become an agent")}</a></li>
             </ul>
-
+              <LanguageSwitcher />
           </div>
         </div>
       </div>
